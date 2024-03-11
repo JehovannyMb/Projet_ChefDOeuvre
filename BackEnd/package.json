@@ -1,0 +1,14 @@
+{
+  "name": "BackEnd",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "index.js",
+  "repository": "https://github.com/JehovannyMb/Projet_ChefDOeuvre.git",
+  "author": "JehovannyMb",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.3",
+    "nodemon": "^3.1.0",
+    "tailwind": "^4.0.0"
+  }
+}
