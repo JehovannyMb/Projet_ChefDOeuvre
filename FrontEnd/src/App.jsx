@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import Item_1 from './components/Item_1'
 import Menu from './components/Menu'
+import SignIn from './components/SignIn'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Menu GetStart={onclick} />
+    {/* <Menu GetStart={onclick} /> */}
+    <SignIn />
     </>
   )
 }
