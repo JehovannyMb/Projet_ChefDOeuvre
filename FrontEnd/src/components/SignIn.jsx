@@ -19,12 +19,36 @@ export default function SignIn() {
                     Bienvenue dans <a className=' text-red-500' href="#">Jeune Memoire</a> , renseignez vos informations de connexion
                 </h1>
             </div>
-            <div className='bg-white rounded-lg h-full pb-80  w-full text-center'>
-                <div className='p-40 text-center rounded-lg border-solid '>
+            <div className='bg-white rounded-lg h-full pb-80  w-full'>
+                <div className='p-40 '>
+                    <form className='flex-row space-y-10 ml-20 mr-40' action="text">
+                        <div className=' bg-slate-200 rounded-xl p-4 '>
+                        <label htmlFor="loginType">Type de connexion</label>
+                        <br />
+                        <input className=' bg-slate-200' type="text"  placeholder='student or teacher' />
+                       
+                        </div>
+                        <div className='  bg-slate-200 rounded-xl p-4'>
+                        <label htmlFor="UserName">Nom d'utilisateur</label>
+                        <br />
+                        <input className=' bg-slate-200' type="text" id='UserName' placeholder="Nom d'utilisateur" />
+                       
+                        </div>
+                        <div className='  bg-slate-200 rounded-xl p-4'>
+                        <label htmlFor="Password">Mot de passe</label>
+                        <br />
+                        <input className=' bg-slate-200' type="text" id='Password' placeholder='Mot de passe' />
+
+                        </div>
+                       
+                    </form>
                     <input type="text" />
                 </div>
-                <Btn_Get />
-                <Btn_Log />
+                <div className=' text-center'>
+                    <Btn_Get />
+                    <Btn_Log />
+                </div>
+
             </div>
 
         </>
