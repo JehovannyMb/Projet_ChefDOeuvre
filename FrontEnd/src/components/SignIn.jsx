@@ -6,12 +6,12 @@ export default function SignIn() {
     return (
         <>
             <div className=' text-white h-80 w-full'>
-                <div className='flex justify-between'>
+                <div className='flex items-center justify-between p-4'>
                     <div>
                         <h1 className=' w-full text-left font-bold text-5xl p-2'>J E M</h1>
 
                     </div>
-                    <div>
+                    <div className=' bg-slate-200 rounded-xl p-4'>
                         <button className='p-2'>Menu</button>
                     </div>
                 </div>
@@ -20,37 +20,36 @@ export default function SignIn() {
                 </h1>
             </div>
             <div className='bg-white rounded-lg h-full pb-80  w-full'>
-                <div className='p-40 '>
-                    <form className='flex-row space-y-10 ml-20 mr-40' action="text">
+                    <form className='flex-row space-y-10 w-full p-40 ' action="text">
                         <div className=' bg-slate-200 rounded-xl p-4 '>
-                        <label htmlFor="loginType">Type de connexion</label>
-                        <br />
-                        <input className=' bg-slate-200' type="text"  placeholder='student or teacher' />
-                       
-                        </div>
-                        <div className='  bg-slate-200 rounded-xl p-4'>
-                        <label htmlFor="UserName">Nom d'utilisateur</label>
-                        <br />
-                        <input className=' bg-slate-200' type="text" id='UserName' placeholder="Nom d'utilisateur" />
-                       
-                        </div>
-                        <div className='  bg-slate-200 rounded-xl p-4'>
-                        <label htmlFor="Password">Mot de passe</label>
-                        <br />
-                        <input className=' bg-slate-200' type="text" id='Password' placeholder='Mot de passe' />
+                            <label htmlFor="loginType">Type de connexion</label>
+                            <br />
+                            <input className=' bg-slate-200' type="text" placeholder='student or teacher' />
 
                         </div>
-                       
+                        <div className='  bg-slate-200 rounded-xl p-4'>
+                            <label htmlFor="UserName">Nom d'utilisateur</label>
+                            <br />
+                            <input className=' bg-slate-200' type="text" id='UserName' placeholder="Nom d'utilisateur" />
+
+                        </div>
+                        <div className='  bg-slate-200 rounded-xl p-4'>
+                            <label htmlFor="Password">Mot de passe</label>
+                            <br />
+                            <input className=' bg-slate-200' type="text" id='Password' placeholder='Mot de passe' />
+
+                        </div>
+
                     </form>
-                    <input type="text" />
-                </div>
                 <div className=' text-center'>
                     <Btn_Get />
                     <Btn_Log />
                 </div>
 
             </div>
+            <footer className=' h-10'>
 
+            </footer>
         </>
     )
 }
