@@ -1,6 +1,5 @@
 import React from 'react'
-import Btn_Get from './Btn_Get'
-import Btn_Log from './Btn_Log'
+import { NavLink } from 'react-router-dom'
 
 export default function Menu() {
     return (
@@ -8,9 +7,11 @@ export default function Menu() {
             <div className=' text-white h-40 w-full'>
                 <div className='flex items-center  p-4 gap-4 justify-center'>
                     <div className=' w-full space-x-4 bg-slate-200 rounded-xl p-4 '>
+                        <NavLink to={"Menu"}>
                         <button>
                             <img src="#" alt="SearchIcon" />
                         </button>
+                        </NavLink>
                         <input className=' bg-slate-200' type="text" placeholder='Search' />
 
                     </div>

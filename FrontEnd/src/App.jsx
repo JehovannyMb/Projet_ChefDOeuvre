@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Home from './components/Home'
 import SignIn from './components/SignIn'
 import Menu from './components/Menu'
@@ -10,9 +8,9 @@ function App() {
 
   return (
     <>
-    {/* <Home GetStart={onclick} /> */}
+    <Home GetStart={onclick} />
     {/* <SignIn /> */}
-    <Menu />
+    {/* <Menu /> */}
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Btn_Log from './Btn_Log'
 import Btn_Get from './Btn_Get'
+import { NavLink } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
 
           </div>
           <div className=' bg-slate-200 rounded-xl p-4'>
+            <NavLink to={"Menu"}>
             <button className='p-2'>Menu</button>
+            </NavLink>
           </div>
         </div>
         <h1 className='  w-full text-center text-3xl font-bold p-10 '>
