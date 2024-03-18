@@ -13,7 +13,12 @@ export default function SignIn() {
 
                     </div>
                     <div className=' bg-slate-200 rounded-xl p-4'>
-                        <button className='p-2'>Menu</button>
+                        <NavLink to={'/SignIn/Menu'}>
+                            <button className='p-2'>
+                                <img className=' h-5' src="../src/icons/3844444_dot_menu_more_option_icon.png" alt="MenuIcon" />
+
+                            </button>
+                        </NavLink>
                     </div>
                 </div>
                 <h1 className='  w-full text-center text-3xl font-bold pl-48 pr-48 pt-20 '>
@@ -21,30 +26,30 @@ export default function SignIn() {
                 </h1>
             </div>
             <div className='bg-white rounded-lg h-full pb-80  w-full'>
-                    <form className='flex-row space-y-10 w-full p-40 ' action="text">
-                        <div className=' bg-slate-200 rounded-xl p-4 '>
-                            <label htmlFor="loginType">Type de connexion</label>
-                            <br />
-                            <input className=' bg-slate-200' type="text" placeholder='student or teacher' />
+                <form className='flex-row space-y-10 w-full p-40 ' action="text">
+                    <div className=' bg-slate-200 rounded-xl p-4 '>
+                        <label htmlFor="loginType">Type de connexion</label>
+                        <br />
+                        <input className=' bg-slate-200' type="text" placeholder='student or teacher' />
 
-                        </div>
-                        <div className='  bg-slate-200 rounded-xl p-4'>
-                            <label htmlFor="UserName">Nom d'utilisateur</label>
-                            <br />
-                            <input className=' bg-slate-200' type="text" id='UserName' placeholder="Nom d'utilisateur" />
+                    </div>
+                    <div className='  bg-slate-200 rounded-xl p-4'>
+                        <label htmlFor="UserName">Nom d'utilisateur</label>
+                        <br />
+                        <input className=' bg-slate-200' type="text" id='UserName' placeholder="Nom d'utilisateur" />
 
-                        </div>
-                        <div className='  bg-slate-200 rounded-xl p-4'>
-                            <label htmlFor="Password">Mot de passe</label>
-                            <br />
-                            <input className=' bg-slate-200' type="text" id='Password' placeholder='Mot de passe' />
+                    </div>
+                    <div className='  bg-slate-200 rounded-xl p-4'>
+                        <label htmlFor="Password">Mot de passe</label>
+                        <br />
+                        <input className=' bg-slate-200' type="text" id='Password' placeholder='Mot de passe' />
 
-                        </div>
+                    </div>
 
-                    </form>
+                </form>
                 <div className=' text-center'>
-                    <Btn_Get />
-                    <Btn_Log />
+                    <Btn_Get title1Btn1={'Connexion'} />
+                    <Btn_Log title2Btn2={'Forget Password'} />
                 </div>
 
             </div>

@@ -1,10 +1,10 @@
     import React from 'react'
     
-    export default function Btn_Log() {
+    export default function Btn_Log(props) {
       return (
         <div>
             <button className=' text-white bg-blue-950 rounded-xl w-80 h-10 mt-4 '>
-            Log in
+            {props.title2Btn2}
         </button>
         </div>
       )

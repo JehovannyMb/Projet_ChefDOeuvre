@@ -14,7 +14,10 @@ export default function Home() {
           </div>
           <div className=' bg-slate-200 rounded-xl p-4'>
             <NavLink to={"Menu"}>
-            <button className='p-2'>Menu</button>
+              <button className='p-2'>
+                <img className=' h-5' src="../src/icons/3844444_dot_menu_more_option_icon.png" alt="MenuIcon" />
+
+              </button>
             </NavLink>
           </div>
         </div>
@@ -27,12 +30,14 @@ export default function Home() {
       </div>
       <div className='bg-white rounded-lg text-center h-full p-40 '>
         <div className=' pb-40'>
-          <img className=' size-40 ' src="../src/images/profile-pic.png" alt="logo" />
+          <img className=' size-40 m-auto ' src="../src/images/profile-pic.png" alt="logo" />
 
         </div>
         <div className=' '>
-          <Btn_Get />
-          <Btn_Log />
+          <NavLink to={"SignIn"}>
+            <Btn_Get title1Btn1={'Get Start'} />
+          </NavLink>
+          <Btn_Log title2Btn2={'Log In'} />
 
         </div>
       </div>
