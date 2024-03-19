@@ -15,7 +15,6 @@ export default function Home() {
           <div className=' bg-slate-200 rounded-xl p-4'>
               <button className='p-2'>
                 <img className=' h-5' src="../src/icons/marque-x.png" alt="MenuIcon" />
-
               </button>
           </div>
         </div>
