@@ -21,7 +21,7 @@ export default function LogIn() {
                 <h1 className='  w-full text-3xl font-bold pl-48 pr-48 pt-20 '>
                     Inscription
                 </h1>
-                <img className=' size-40 mr-4 ' src="../src/images/profile-pic.png" alt="profil" />
+                <img className=' size-40 mr-4 ' src="../src/icons/Logo_JEM.png" alt="profil" />
 
                 </div>
                

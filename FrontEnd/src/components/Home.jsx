@@ -28,7 +28,7 @@ export default function Home() {
       </div>
       <div className='bg-white rounded-lg text-center h-full p-40 '>
         <div className=' pb-40'>
-          <img className=' size-40 m-auto ' src="../src/images/profile-pic.png" alt="logo" />
+          <img className=' size-40 m-auto ' src="../src/icons/Logo_JEM.png" alt="logo" />
 
         </div>
         <div className=' '>
