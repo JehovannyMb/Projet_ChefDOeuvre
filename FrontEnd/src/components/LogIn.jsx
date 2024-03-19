@@ -1,17 +1,13 @@
 import React from 'react'
-import Btn_Log from './Btn_Log'
 import Btn_Get from './Btn_Get'
+import Btn_Log from './Btn_Log'
 import { NavLink } from 'react-router-dom'
 
-export default function SignIn() {
+export default function LogIn() {
     return (
         <>
             <div className=' text-white h-80 w-full'>
                 <div className='flex items-center justify-between p-4'>
-                    <div>
-                        <h1 className=' w-full text-left font-bold text-5xl p-2'>J E M</h1>
-
-                    </div>
                     <div className=' bg-slate-200 rounded-xl p-4'>
                         <NavLink to={'/SignIn/Home'}>
                             <button className='p-2'>
@@ -21,22 +17,38 @@ export default function SignIn() {
                         </NavLink>
                     </div>
                 </div>
-                <h1 className='  w-full text-center text-3xl font-bold pl-48 pr-48 pt-20 '>
-                    Bienvenue dans <a className=' text-red-500' href="#">Jeune Memoire</a> , renseignez vos informations de connexion
+                <div className=' flex justify-between'>
+                <h1 className='  w-full text-3xl font-bold pl-48 pr-48 pt-20 '>
+                    Inscription
                 </h1>
+                <img className=' size-40 mr-4 ' src="../src/images/profile-pic.png" alt="profil" />
+
+                </div>
+               
             </div>
             <div className='bg-white rounded-lg h-full pb-80  w-full'>
                 <form className='flex-row space-y-10 w-full p-40 ' action="text">
+                    <div>
+                        <h2>Informations personnelles</h2>
+
+                    </div>
+
                     <div className=' bg-slate-200 rounded-xl p-4 '>
-                        <label htmlFor="loginType">Type de connexion</label>
+                        <label htmlFor="Nom d'utilisateur">Nom d'utilisateur</label>
                         <br />
-                        <input className=' bg-slate-200' type="text" placeholder='student or teacher' />
+                        <input className=' bg-slate-200' type="text" placeholder="Nom d'utilisateur" />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
-                        <label htmlFor="UserName">Nom d'utilisateur</label>
+                        <label htmlFor="Mail">E-mail</label>
                         <br />
-                        <input className=' bg-slate-200' type="text" id='UserName' placeholder="Nom d'utilisateur" />
+                        <input className=' bg-slate-200' type="text" id='E-mail' placeholder="E-mail" />
+
+                    </div>
+                    <div className='  bg-slate-200 rounded-xl p-4'>
+                        <label htmlFor="Numero">Numéro de Téléphone</label>
+                        <br />
+                        <input className=' bg-slate-200' type="text" id='Numéro' placeholder="Numéro de Téléphone" />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
@@ -48,10 +60,14 @@ export default function SignIn() {
 
                 </form>
                 <div className=' text-center'>
-                    <NavLink to={"Menu"}>
-                    <Btn_Get title1Btn1={'Connexion'} />
-                    </NavLink>
-                    <Btn_Log title2Btn2={'Mot de passe oublié'} />
+                    <Btn_Get title1Btn1={'Enregistrer'} />
+                    <div>
+                        <NavLink to={'/SignIn/Home'}>
+                            <Btn_Log title2Btn2={'Sortir'} />
+
+                        </NavLink>
+
+                    </div>
                 </div>
 
             </div>

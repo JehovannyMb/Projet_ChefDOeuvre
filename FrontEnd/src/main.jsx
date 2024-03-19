@@ -10,6 +10,8 @@ import {
 import App_lock from './App_lock.jsx';
 import SignIn from './components/SignIn.jsx';
 import Menu from './components/Menu.jsx';
+import LogIn from './components/LogIn.jsx';
+import Home from './components/Home.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,15 @@ const router = createBrowserRouter([
   path:"/Menu",
   element: <Menu />
 },
+{
+  path:"/LogIn",
+  element: <LogIn />
+},
+{
+  path:"/SignIn/Home",
+  element: <Home />
+}
+,
 {
   path:"/SignIn/Menu",
   element: <Menu />

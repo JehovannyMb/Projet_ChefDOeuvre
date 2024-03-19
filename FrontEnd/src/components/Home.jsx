@@ -13,19 +13,17 @@ export default function Home() {
 
           </div>
           <div className=' bg-slate-200 rounded-xl p-4'>
-            <NavLink to={"Menu"}>
               <button className='p-2'>
-                <img className=' h-5' src="../src/icons/3844444_dot_menu_more_option_icon.png" alt="MenuIcon" />
+                <img className=' h-5' src="../src/icons/marque-x.png" alt="MenuIcon" />
 
               </button>
-            </NavLink>
           </div>
         </div>
         <h1 className='  w-full text-center text-3xl font-bold p-10 '>
-          Closer the university of the student
+          Plus proche de l'université, plus proche de l'étudiant
         </h1>
         <h2 className=' opacity-50 p-2 text-center'>
-          Makes sure you have an account before to get started.
+          Assurez-vous d'avoir un compte avant de commencer
         </h2>
       </div>
       <div className='bg-white rounded-lg text-center h-full p-40 '>
@@ -35,10 +33,11 @@ export default function Home() {
         </div>
         <div className=' '>
           <NavLink to={"SignIn"}>
-            <Btn_Get title1Btn1={'Get Start'} />
+            <Btn_Get title1Btn1={'Commencer'} />
           </NavLink>
-          <Btn_Log title2Btn2={'Log In'} />
-
+          <NavLink to={"LogIn"}>
+            <Btn_Log title2Btn2={'Créer un compte'} />
+          </NavLink>
         </div>
       </div>
       <footer className=' h-10'>
