@@ -12,6 +12,7 @@ import SignIn from './components/SignIn.jsx';
 import Menu from './components/Menu.jsx';
 import LogIn from './components/LogIn.jsx';
 import Home from './components/Home.jsx';
+import Courses from './components/Courses.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,11 +38,14 @@ const router = createBrowserRouter([
 {
   path:"/SignIn/Home",
   element: <Home />
-}
-,
+},
 {
   path:"/SignIn/Menu",
   element: <Menu />
+},
+{
+  path:"/SignIn/Menu/Courses",
+  element: <Courses />
 }
     ]
   },

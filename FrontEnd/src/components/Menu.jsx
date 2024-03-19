@@ -42,9 +42,13 @@ export default function Menu() {
                         <h2 className=' font-bold'> Inserrer des cours</h2>
                     </div>
                     <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>
-                        <button>
-                            <img className=' h-10' src="../src/icons/livre-ouvert.png" alt="ProfileIcon" />
-                        </button>
+                        <NavLink to={'Courses'}>
+
+                            <button>
+                                <img className=' h-10' src="../src/icons/livre-ouvert.png" alt="ProfileIcon" />
+                            </button>
+                        </NavLink>
+
                         <h2 className=' font-bold'> Consulter des cours</h2>
                     </div>
                     <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>
