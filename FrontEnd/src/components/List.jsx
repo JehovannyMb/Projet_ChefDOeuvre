@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-export default function Courses() {
+export default function List() {
     return (
         <>
             <div className=' text-white h-40 w-full'>
@@ -30,9 +30,11 @@ export default function Courses() {
 
                     </div>
                     <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>
-                        <button>
-                            <img className=' h-10' src="/src/icons/pile-de-livres.png" alt="course" />
-                        </button>
+                        <NavLink to={'Course'}>
+                            <button>
+                                <img className=' h-10' src="/src/icons/pile-de-livres.png" alt="course" />
+                            </button>
+                        </NavLink>
                         <h2 className=' font-bold'> xxxxxxxxxxxxxxxxxx</h2>
                     </div>
 

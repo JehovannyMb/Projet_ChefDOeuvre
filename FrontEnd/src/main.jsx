@@ -4,7 +4,6 @@ import App from './App.jsx';
 import './index.css'
 import {
   createBrowserRouter,
-  Outlet,
   RouterProvider,
 } from "react-router-dom";
 import App_lock from './App_lock.jsx';
@@ -12,7 +11,8 @@ import SignIn from './components/SignIn.jsx';
 import Menu from './components/Menu.jsx';
 import LogIn from './components/LogIn.jsx';
 import Home from './components/Home.jsx';
-import Courses from './components/Courses.jsx';
+import List from './components/List.jsx';
+import Course from './components/Course.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,8 +44,12 @@ const router = createBrowserRouter([
   element: <Menu />
 },
 {
-  path:"/SignIn/Menu/Courses",
-  element: <Courses />
+  path:"/SignIn/Menu/List",
+  element: <List />
+},
+{
+  path:"/SignIn/Menu/List/Course",
+  element: <Course />
 }
     ]
   },
