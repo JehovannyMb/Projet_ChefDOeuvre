@@ -18,13 +18,13 @@ export default function LogIn() {
                     </div>
                 </div>
                 <div className=' flex justify-between'>
-                <h1 className='  w-full text-3xl font-bold pl-48 pr-48 pt-20 '>
-                    Inscription
-                </h1>
-                <img className=' size-40 mr-4 ' src="../src/icons/Logo_JEM.png" alt="profil" />
+                    <h1 className='  w-full text-3xl font-bold pl-48 pr-48 pt-20 '>
+                        Inscription
+                    </h1>
+                    <img className=' size-40 mr-4 ' src="../src/icons/Logo_JEM.png" alt="profil" />
 
                 </div>
-               
+
             </div>
             <div className='bg-white rounded-lg h-full pb-80  w-full'>
                 <form className='flex-row space-y-10 w-full p-40 ' action="text">
@@ -72,7 +72,17 @@ export default function LogIn() {
 
             </div>
             <footer className=' h-10'>
+                <div className=' flex gap-2 text-white opacity-50 justify-center mt-2 '>
+                    <h4>Terms</h4>
+                    <h4>Privacy</h4>
+                    <h4>Security</h4>
+                    <h4>Status</h4>
+                    <h4>Docs</h4>
+                    <h4>Contact</h4>
+                    <h4>Do not share the personal information</h4>
+                    <h4>© 2024 GitHub, Inc</h4>
 
+                </div>
             </footer>
         </>
     )
