@@ -1,15 +1,34 @@
 import React from 'react'
 import Btn_Log from './Btn_Log'
 import Btn_Get from './Btn_Get'
+import { NavLink } from 'react-router-dom'
 
 export default function Course() {
     return (
         <>
-           <div className=' p-5'>
+            <div className=' p-5'>
+                <div className=' w-20 bg-slate-200 rounded-xl p-4'>
+                        <button className='p-2'>
+                            <img className=' h-5' src="/src/icons/retour.png" alt="MenuIcon" />
 
-           </div>
-            <div className='bg-white rounded-lg text-center h-full p-40 '>
+                        </button>
+                </div>
+                <div className=' text-white text-center p-4'>
+                    <h1 className=' underline text-2xl font-bold pb-4'>LECTURE</h1>
+                    <h1 className=' italic font w-full text-3xl font-bold '>
+                        Lire c'est boire et manger. L'esprit qui ne lit pas maigrit, comme le corps qui ne mange pas!
+                    </h1>
+                    <h2><a className=' text-red-500' href="#">Victor Hugo</a></h2>
+                </div>
+            </div>
+            <div className='bg-white rounded-lg text-center h-full p-4 '>
+                <div className=' border-dashed border-2 py-2 border-b-blue-900 border-y-white border-x-white flex gap-4 rounded-t-xl p-4 '>
+                    <h2> Lecture de : ...</h2>
 
+                </div>
+                <div className=' p-40'>
+
+                </div>
                 <div className=' flex justify-center'>
                     <Btn_Get title1Btn1={'Commenter'} />
                 </div>

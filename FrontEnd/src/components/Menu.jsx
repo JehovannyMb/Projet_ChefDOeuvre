@@ -18,15 +18,19 @@ export default function Menu() {
                     <div className=' bg-slate-200 rounded-xl p-4' >
                         <button className=''>
                             <img className=' h-5' src="../src/icons/3844444_dot_menu_more_option_icon.png" alt="MenuIcon" />
-
                         </button>
                     </div>
                 </div>
             </div>
+            <div className=' text-white text-center p-4'>
+                <h1 className=' underline w-full text-3xl font-bold pb-4 '>
+                    LISTE DES SERVICES
+                </h1>
+            </div>
             <div className='bg-white rounded-lg space-y-2 h-full pb-80  w-full'>
                 <div className=' space-y-2 p-4'>
                     <div className=' border-dashed border-2 py-2 border-b-blue-900 border-y-white border-x-white flex gap-4 rounded-t-xl p-4 '>
-                        <h2> Liste des services :</h2>
+                        <h2> Options :</h2>
 
                     </div>
                     <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>

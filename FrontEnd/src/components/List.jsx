@@ -23,10 +23,18 @@ export default function List() {
                     </div>
                 </div>
             </div>
+            <div className=' text-white text-center p-4'>
+                <h1 className=' underline text-2xl font-bold pb-4'>OUVRAGES</h1>
+                <h1 className=' italic w-full text-3xl font-bold '>
+                    On admire toujours l'ouvrage ou l'on retrouve ses pensées. L'amour a besoindes yeux comme la pensée a besoin de la mémoire
+                </h1>
+                <h2><a className=' text-red-500' href="#">Madame Necker</a></h2>
+
+            </div>
             <div className='bg-white rounded-lg space-y-2 h-full pb-80  w-full'>
                 <div className=' space-y-2 p-4'>
                     <div className=' border-dashed border-2 py-2 border-b-blue-900 border-y-white border-x-white flex gap-4 rounded-t-xl p-4 '>
-                        <h2> Liste de cours :</h2>
+                        <h2> Liste d'ouvrages :</h2>
 
                     </div>
                     <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>
