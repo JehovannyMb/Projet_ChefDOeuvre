@@ -10,6 +10,7 @@
   "author": "JehovannyMb",
   "license": "MIT",
   "dependencies": {
+    "@prisma/client": "5.11.0",
     "ejs": "^3.1.9",
     "express": "^4.18.3",
     "morgan": "^1.10.0",
@@ -25,5 +26,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {
+    "prisma": "5.11.0"
+  }
 }

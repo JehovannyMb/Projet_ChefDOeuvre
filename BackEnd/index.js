@@ -1,7 +1,7 @@
 const express = require('express')
 const { Pool} = require('pg');
 const path = require('path')
-
+const { table } = require('console');
 const pool = new Pool({
     user: "admin",
     host: "localhost",
@@ -13,6 +13,7 @@ console.log("connexion à la base de données réussite")
 const app = express();
 
 const port = 3000;
+
 
 app.set("view engine","ejs");
 app.set("views",__dirname +"/views");
