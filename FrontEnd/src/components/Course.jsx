@@ -42,7 +42,7 @@ export default function Course() {
                     <h4>Docs</h4>
                     <h4>Contact</h4>
                     <h4>Do not share the personal information</h4>
-                    <h4>© 2024 GitHub, Inc</h4>
+                    <h4>© 2024 JEM, Inc</h4>
 
                 </div>
             </footer>
