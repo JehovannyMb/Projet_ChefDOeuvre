@@ -3,3 +3,6 @@
 Read me, please!
 Mon projet se subdivise en deux parties, le FrontEnd et le BackEnd avec des extensions différentes dans chacuns de dossiers. Pour lancer le FrotEnd, il faut accéder au dossier puis taper la commande npm run dev. Pour lancer le BackEnd, il faut accéder au dossier puis taper la commande npm start. Les détails de la base de donnée se trouvent dans le dossier BackEnd, précisement dans le fichier .env. Je vous conseil d'installer l'extension postrgres, de remplir les questions sur le chemin d'accès et les identifiants et mot de passe, localhost 127.0.01, ...
 Sinon, il est aussi possible de voir les différentes tables crées directement sur votre navigateur en tapant la commande npx prisma studio, dans le dossier BackEnd. 
+
+
+.....
