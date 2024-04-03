@@ -13,6 +13,8 @@ import LogIn from './components/LogIn.jsx';
 import Home from './components/Home.jsx';
 import List from './components/List.jsx';
 import Course from './components/Course.jsx';
+import InsertCourse from './components/InsertCourses.jsx';
+import InsertCourses from './components/InsertCourses.jsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,10 @@ const router = createBrowserRouter([
 {
   path:"/SignIn/Menu/List/Course",
   element: <Course />
+},
+{
+  path:"/SignIn/Menu/InsertCourses",
+  element: <InsertCourses />
 }
     ]
   },

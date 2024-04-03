@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Btn_Get from './Btn_Get'
 import Btn_Log from './Btn_Log'
 import { NavLink } from 'react-router-dom'
+import axios from 'axios'
 
 export default function LogIn() {
+    const [InputName, setInputName] = useState('')
+    const [InputMail, setInputMail] = useState('')
+    const [InputNum, setInputNum] = useState('')
+    const [InputPassword, setInputPassword] = useState('')
+
+    useEffect(() => {
+        axios.get('/user', {
+            params: {
+                email: InputMail,
+                name: InputName,
+            }
+        });
+    }).then(()=>{
+        console.log('Changement effectué avec succès')
+    })
+    .catch(()=>{
+        console.log('Erreur dans le changement');
+    })
+    .finally(()=>{
+        console.log('useEffect opérationnel');
+    })
+
     return (
         <>
             <div className=' text-white h-80 w-full'>
@@ -36,25 +59,25 @@ export default function LogIn() {
                     <div className=' bg-slate-200 rounded-xl p-4 '>
                         <label htmlFor="Nom d'utilisateur">Nom d'utilisateur</label>
                         <br />
-                        <input className=' bg-slate-200' type="text" placeholder="Nom d'utilisateur" />
+                        <input value={InputName} onChange={(e) => setInputName(e.target.value)} className=' bg-slate-200' type="text" placeholder="Nom d'utilisateur" />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
                         <label htmlFor="Mail">E-mail</label>
                         <br />
-                        <input className=' bg-slate-200' type="text" id='E-mail' placeholder="E-mail" />
+                        <input value={InputMail} onChange={(e) => setInputMail(e.target.value)} className=' bg-slate-200' type="text" id='E-mail' placeholder="E-mail" />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
                         <label htmlFor="Numero">Numéro de Téléphone</label>
                         <br />
-                        <input className=' bg-slate-200' type="text" id='Numéro' placeholder="Numéro de Téléphone" />
+                        <input value={InputNum} onChange={(e) => setInputNum(e.target.value)} className=' bg-slate-200' type="text" id='Numéro' placeholder="Numéro de Téléphone" />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
                         <label htmlFor="Password">Mot de passe</label>
                         <br />
-                        <input className=' bg-slate-200' type="text" id='Password' placeholder='Mot de passe' />
+                        <input value={InputPassword} onChange={(e) => setInputPassword(e.target.value)} className=' bg-slate-200' type="text" id='Password' placeholder='Mot de passe' />
 
                     </div>
 

@@ -33,33 +33,38 @@ export default function Menu() {
                         <h2> Options :</h2>
 
                     </div>
-                    <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>
-                        <button>
+                    <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white rounded-t-xl p-4'>
+                        <button className=' flex gap-4'>
                             <img className=' h-10' src="../src/icons/livre (1).png" alt="ProfileIcon" />
+                            <h2 className=' font-bold'> Gestion du profil</h2>
+
                         </button>
-                        <h2 className=' font-bold'> Gestion du profil</h2>
                     </div>
-                    <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>
-                        <button>
-                            <img className=' h-10' src="../src/icons/livre.png" alt="ProfileIcon" />
-                        </button>
-                        <h2 className=' font-bold'> Inserrer des cours</h2>
+                    <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white rounded-t-xl p-4'>
+                        <NavLink to={'InsertCourses'}>
+                            <button className=' flex gap-4'>
+                                <img className=' h-10' src="../src/icons/livre.png" alt="ProfileIcon" />
+                                <h2 className=' font-bold'> Inserrer des cours</h2>
+                            </button>
+                        </NavLink>
                     </div>
-                    <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>
+                    <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white rounded-t-xl p-4'>
                         <NavLink to={'List'}>
 
-                            <button>
+                            <button className=' flex gap-4'>
                                 <img className=' h-10' src="../src/icons/livre-ouvert.png" alt="ProfileIcon" />
+                                <h2 className=' font-bold'> Consulter des cours</h2>
+
                             </button>
                         </NavLink>
 
-                        <h2 className=' font-bold'> Consulter des cours</h2>
                     </div>
                     <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>
-                        <button>
+                        <button className=' flex gap-4'>
                             <img className=' h-10' src="../src/icons/deconnexion.png" alt="ProfileIcon" />
+                            <h2 className=' font-bold'> Deconnexion</h2>
+
                         </button>
-                        <h2 className=' font-bold'> Deconnexion</h2>
                     </div>
                 </div>
 
