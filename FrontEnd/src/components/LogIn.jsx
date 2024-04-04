@@ -11,21 +11,22 @@ export default function LogIn() {
     const [InputPassword, setInputPassword] = useState('')
 
     useEffect(() => {
-        axios.get('/user', {
+        axios.post('http://localhost:3000/', {
             params: {
                 email: InputMail,
                 name: InputName,
             }
         });
-    }).then(()=>{
-        console.log('Changement effectué avec succès')
     })
-    .catch(()=>{
-        console.log('Erreur dans le changement');
-    })
-    .finally(()=>{
-        console.log('useEffect opérationnel');
-    })
+    // .then(()=>{
+    //     console.log('Changement effectué avec succès')
+    // })
+    // .catch(()=>{
+    //     console.log('Erreur dans le changement');
+    // })
+    // .finally(()=>{
+    //     console.log('useEffect opérationnel');
+    // })
 
     return (
         <>
