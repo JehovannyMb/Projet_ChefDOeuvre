@@ -44,7 +44,7 @@ export default function Menu() {
                         <NavLink to={'InsertCourses'}>
                             <button className=' flex gap-4'>
                                 <img className=' h-10' src="../src/icons/livre.png" alt="ProfileIcon" />
-                                <h2 className=' font-bold'> Inserrer des cours</h2>
+                                <h2 className=' font-bold'> Insérer des cours</h2>
                             </button>
                         </NavLink>
                     </div>
