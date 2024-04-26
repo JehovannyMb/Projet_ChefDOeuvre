@@ -2,6 +2,7 @@ import React from 'react'
 import Btn_Log from './Btn_Log'
 import Btn_Get from './Btn_Get'
 import { NavLink } from 'react-router-dom'
+import { Button, TextField, Typography } from '@mui/material';
 
 export default function SignIn() {
     return (
@@ -27,23 +28,12 @@ export default function SignIn() {
             </div>
             <div className='bg-white rounded-lg h-full pb-80  w-full'>
                 <form className='flex-row space-y-10 w-full p-40 ' action="text">
-                    <div className=' bg-slate-200 rounded-xl p-4 '>
-                        <label htmlFor="loginType">Type de connexion</label>
-                        <br />
-                        <input className=' bg-slate-200' type="text" placeholder='student or teacher' />
-
+                    <Typography className=''> Connexion</Typography>
+                    <div className='  bg-slate-200 rounded-xl p-4'>
+                        <TextField id="outlined-basic" label="Adresse e-mail" fullWidth type='email' variant="outlined" />
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
-                        <label htmlFor="UserName">Nom d'utilisateur</label>
-                        <br />
-                        <input className=' bg-slate-200' type="text" id='UserName' placeholder="Nom d'utilisateur" />
-
-                    </div>
-                    <div className='  bg-slate-200 rounded-xl p-4'>
-                        <label htmlFor="Password">Mot de passe</label>
-                        <br />
-                        <input className=' bg-slate-200' type="text" id='Password' placeholder='Mot de passe' />
-
+                    <TextField id="outlined-basic" label="Mot de passe" fullWidth type='password' variant="outlined" />
                     </div>
 
                 </form>

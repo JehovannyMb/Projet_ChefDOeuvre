@@ -15,7 +15,7 @@ import List from './components/List.jsx';
 import Course from './components/Course.jsx';
 import InsertCourse from './components/InsertCourses.jsx';
 import InsertCourses from './components/InsertCourses.jsx';
-
+import {Toaster} from 'react-hot-toast'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -62,6 +62,7 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <Toaster/>
     <div>
       <RouterProvider router={router} />
     </div>

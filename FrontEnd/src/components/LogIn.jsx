@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Btn_Get from './Btn_Get'
 import Btn_Log from './Btn_Log'
 import { NavLink } from 'react-router-dom'
+import { Button, TextField } from '@mui/material'
+import { useForm } from "react-hook-form"
+import toast from 'react-hot-toast'
 import axios from 'axios'
 
 export default function LogIn() {
@@ -9,23 +12,30 @@ export default function LogIn() {
     const [InputMail, setInputMail] = useState('')
     const [InputNum, setInputNum] = useState('')
     const [InputPassword, setInputPassword] = useState('')
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm();
+      const onSubmit = (data) => {
+        if(data.emailUtilisateur ='' ){
+           
+            toast.error("Remplissez le champ mail")
 
-    useEffect(() => {
-        axios.get('/user', {
-            params: {
-                email: InputMail,
-                name: InputName,
-            }
-        });
-    }).then(()=>{
-        console.log('Changement effectué avec succès')
-    })
-    .catch(()=>{
-        console.log('Erreur dans le changement');
-    })
-    .finally(()=>{
-        console.log('useEffect opérationnel');
-    })
+        }else{
+            axios
+            .post("http://localhost:3000/Utilisateurs", data)
+            .then((res) =>{
+                console.log(res);
+            toast.success("Inscription réussie");
+            })
+            .catch((err)=> {
+                console.log(err);
+                toast.error("Une erreur est survenue lors de l'inscription")
+            })
+        }
+      };
+
 
     return (
         <>
@@ -50,48 +60,43 @@ export default function LogIn() {
 
             </div>
             <div className='bg-white rounded-lg h-full pb-80  w-full'>
-                <form className='flex-row space-y-10 w-full p-40 ' action="text">
+                <form onSubmit={handleSubmit(onSubmit)} className='flex-row space-y-10 w-full p-40 ' action="text">
                     <div>
                         <h2>Informations personnelles</h2>
 
                     </div>
 
                     <div className=' bg-slate-200 rounded-xl p-4 '>
-                        <label htmlFor="Nom d'utilisateur">Nom d'utilisateur</label>
-                        <br />
-                        <input value={InputName} onChange={(e) => setInputName(e.target.value)} className=' bg-slate-200' type="text" placeholder="Nom d'utilisateur" />
+                        <TextField id="outlined-basic" label="Nom d'utilisateur" fullWidth type='text' variant="outlined" {...register("nomUtilisateur", { required: "Veuillez saisir un nom", minLength : {value: 5, message: "Veuillez saisir un nom de plus de 5 caractères"} })}  />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
-                        <label htmlFor="Mail">E-mail</label>
-                        <br />
-                        <input value={InputMail} onChange={(e) => setInputMail(e.target.value)} className=' bg-slate-200' type="text" id='E-mail' placeholder="E-mail" />
+
+                        <TextField id="outlined-basic" label="Adresse e-mail" fullWidth type='mail' variant="outlined" {...register("emailUtilisateur", { required : "Veuillez saisir une adresse mail", pattern:"/^[a-zA-Z0-9. _%+-]+@[a-zA-Z0-9. -]+\\. [a-zA-Z]{2,}$/,"})} />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
-                        <label htmlFor="Numero">Numéro de Téléphone</label>
-                        <br />
-                        <input value={InputNum} onChange={(e) => setInputNum(e.target.value)} className=' bg-slate-200' type="text" id='Numéro' placeholder="Numéro de Téléphone" />
+                        <TextField id="outlined-basic" label="Numéro de téléphone" fullWidth type='tel' variant="outlined" {...register("tel", {required: "Veuillez saisir un numéro de téléphone", minLength: {value:10, message: "Veuillez saisir un numéro contenant 10 chiffres"}})} />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
-                        <label htmlFor="Password">Mot de passe</label>
-                        <br />
-                        <input value={InputPassword} onChange={(e) => setInputPassword(e.target.value)} className=' bg-slate-200' type="text" id='Password' placeholder='Mot de passe' />
+                        <TextField id="outlined-basic" label="Mot de passe" fullWidth type='password' variant="outlined" {...register("motDePasse", {required: "Veuillez saisir un mot de passe", minLength : {value:5, message:"Veuillez saisir un mot de passe d'au moins 5 caractères"}})} />
 
                     </div>
 
-                </form>
-                <div className=' text-center'>
-                    <Btn_Get title1Btn1={'Enregistrer'} />
+                    <div className=' text-center'>
+                    <Button sx={'background-color: rgb(23, 37, 84)'} type='submit' fullWidth variant="contained">Enregistrer</Button>
+
                     <div>
                         <NavLink to={'/SignIn/Home'}>
-                            <Btn_Log title2Btn2={'Sortir'} />
+                            <Button sx={'background-color: rgb(23, 37, 84); margin-top:2em'} fullWidth variant="contained">Sortir</Button>
 
                         </NavLink>
 
                     </div>
                 </div>
+                </form>
+                
 
             </div>
             <footer className=' h-10'>
