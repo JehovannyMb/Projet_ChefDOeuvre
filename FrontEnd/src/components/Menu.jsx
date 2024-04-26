@@ -1,7 +1,13 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { NavLink, useNavigate} from 'react-router-dom'
 
 export default function Menu() {
+    const navigate = useNavigate();
+    useEffect(()=>{
+        if(!localStorage.getItem("Utilisateurs")){
+            navigate("/SignIn")
+        }
+    })
     return (
         <>
             <div className=' text-white h-40 w-full'>

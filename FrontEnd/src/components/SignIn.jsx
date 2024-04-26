@@ -1,10 +1,39 @@
-import React from 'react'
-import Btn_Log from './Btn_Log'
-import Btn_Get from './Btn_Get'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Button, TextField, Typography } from '@mui/material';
+import { useForm } from "react-hook-form"
+import toast from 'react-hot-toast'
+import axios from 'axios'
 
 export default function SignIn() {
+    useEffect(()=>{
+        if(localStorage.getItem("Utilisateurs")){
+            navigate("/Menu");
+        }
+    });
+    const navigate = useNavigate();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm();
+      const onSubmit = (data) => {
+        axios
+        .get(`http://localhost:3000/Utilisateurs?mailUtilisateur=${data.mailUtilisateur}&motDePasse=${data.motDePasse}`)
+        .then((res)=>{
+            if(res.data.length>0){
+                localStorage.setItem("Utilisateurs", JSON.stringify(res.data[0]))
+                navigate("/Menu")
+                toast.success("Connexion réussie")
+
+            }else{
+                toast.error("Les identifiants sont incorrects ou vous ne disposez pas de compte inscrit dans le site")
+            }
+        }).catch((err)=> {
+            console.log(err);
+            toast.error("Une erreur est survenue lors de l'inscription")
+        })
+      }
     return (
         <>
             <div className=' text-white h-80 w-full'>
@@ -27,22 +56,23 @@ export default function SignIn() {
                 </h1>
             </div>
             <div className='bg-white rounded-lg h-full pb-80  w-full'>
-                <form className='flex-row space-y-10 w-full p-40 ' action="text">
+                <form onSubmit={handleSubmit(onSubmit)} className='flex-row space-y-10 w-full p-40 ' action="text">
                     <Typography className=''> Connexion</Typography>
                     <div className='  bg-slate-200 rounded-xl p-4'>
-                        <TextField id="outlined-basic" label="Adresse e-mail" fullWidth type='email' variant="outlined" />
+                        <TextField id="outlined-basic" label="Adresse e-mail" fullWidth type='email' variant="outlined" {...register("mailUtilisateur", {required: "Veuillez saisir votre adresse mail", pattern:"/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"})}  />
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
-                    <TextField id="outlined-basic" label="Mot de passe" fullWidth type='password' variant="outlined" />
+                    <TextField id="outlined-basic" label="Mot de passe" fullWidth type='password' variant="outlined" {...register("motDePasse", {required: "Veuillez saisir un mot de passe", minLength : {value:5, message:"Veuillez saisir un mot de passe d'au moins 5 caractères"}})} />
                     </div>
-
-                </form>
-                <div className=' text-center'>
-                    <NavLink to={"Menu"}>
-                        <Btn_Get title1Btn1={'Connexion'} />
-                    </NavLink>
-                    <Btn_Log title2Btn2={'Mot de passe oublié'} />
+                    <div className=' text-center'>
+                    <Button sx={'background-color: rgb(23, 37, 84)'} type='submit' fullWidth variant="contained">Connexion</Button>
+                    <Button sx={'background-color: rgb(23, 37, 84); margin-top:2em'} fullWidth variant="contained">Mot de passe oublié</Button>
+                    <Typography paddingTop={2}>Voulez-vous créer un compte?
+                    <NavLink to={"/LogIn"}> Cliquez ici!</NavLink>
+                    </Typography>
                 </div>
+                </form>
+       
 
             </div>
             <footer className=' h-10'>

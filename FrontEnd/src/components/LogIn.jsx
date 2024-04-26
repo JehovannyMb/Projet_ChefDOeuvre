@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Btn_Get from './Btn_Get'
 import Btn_Log from './Btn_Log'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Button, TextField } from '@mui/material'
 import { useForm } from "react-hook-form"
 import toast from 'react-hot-toast'
 import axios from 'axios'
 
 export default function LogIn() {
-    const [InputName, setInputName] = useState('')
-    const [InputMail, setInputMail] = useState('')
-    const [InputNum, setInputNum] = useState('')
-    const [InputPassword, setInputPassword] = useState('')
+   const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -20,21 +17,42 @@ export default function LogIn() {
       const onSubmit = (data) => {
         if(data.emailUtilisateur ='' ){
            
-            toast.error("Remplissez le champ mail")
+            toast.error("Veuillez remplir le champ mail")
 
         }else{
             axios
-            .post("http://localhost:3000/Utilisateurs", data)
-            .then((res) =>{
-                console.log(res);
-            toast.success("Inscription réussie");
-            })
-            .catch((err)=> {
-                console.log(err);
-                toast.error("Une erreur est survenue lors de l'inscription")
-            })
-        }
-      };
+            .get(`http://localhost:3000/Utilisateurs?mailUtilisateur=${data.mailUtilisateur}`)
+            .then((res)=>{
+                if(res.data.length > 0){
+                    toast.error("Un compte existe déjà avec cette adresse mail")
+                }else{
+                    axios
+                    .get(`http://localhost:3000/Utilisateurs?tel=${data.tel}`)
+                    .then((res)=>{
+                        if(res.data.length > 0){
+                        toast.error("Un compte existe déjà avec ce numéro de téléphone")
+                    }else{
+                        axios
+                        .get(`http://localhost:3000/Utilisateurs?nomUtilisateur=${data.nomUtilisateur}`)
+                        .then((res)=>{
+                            if(res.data.length>0){
+                                toast.error("Un compte existe déjà avec ce nom d'utilisateur")
+                            }else{
+                                axios
+                                .post("http://localhost:3000/Utilisateurs", data)
+                                .then((res) =>{
+                                    console.log(res);
+                                toast.success("Inscription réussie");
+                                navigate("/SignIn");
+                                })
+                                .catch((err)=> {
+                                    console.log(err);
+                                    toast.error("Une erreur est survenue lors de l'inscription")
+                                })
+                            }
+                        })
+                      
+                    }})}})}};
 
 
     return (
@@ -71,8 +89,7 @@ export default function LogIn() {
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
-
-                        <TextField id="outlined-basic" label="Adresse e-mail" fullWidth type='mail' variant="outlined" {...register("emailUtilisateur", { required : "Veuillez saisir une adresse mail", pattern:"/^[a-zA-Z0-9. _%+-]+@[a-zA-Z0-9. -]+\\. [a-zA-Z]{2,}$/,"})} />
+                        <TextField id="outlined-basic" label="Adresse mail" fullWidth type='email' variant="outlined" {...register("mailUtilisateur", {required: "Veuillez saisir votre adresse mail", pattern:"/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"})} />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
