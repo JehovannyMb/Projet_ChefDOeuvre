@@ -13,9 +13,9 @@ export default function Home() {
 
           </div>
           <div className=' bg-slate-200 rounded-xl p-4'>
-              <button className='p-2'>
-                <img className=' h-5' src="../src/icons/marque-x.png" alt="MenuIcon" />
-              </button>
+            <button className='p-2'>
+              <img className=' h-5' src="../src/icons/marque-x.png" alt="MenuIcon" />
+            </button>
           </div>
         </div>
         <h1 className='  w-full text-center text-3xl font-bold p-10 '>
@@ -40,7 +40,17 @@ export default function Home() {
         </div>
       </div>
       <footer className=' h-10'>
+        <div className=' flex gap-2 text-white opacity-50 justify-center mt-2 '>
+          <h4>Terms</h4>
+          <h4>Privacy</h4>
+          <h4>Security</h4>
+          <h4>Status</h4>
+          <h4>Docs</h4>
+          <h4>Contact</h4>
+          <h4>Do not share the personal information</h4>
+          <h4>© 2024 JEM, Inc</h4>
 
+        </div>
       </footer>
     </>
   )
