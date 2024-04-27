@@ -4,6 +4,7 @@ import { Button, TextField, Typography } from '@mui/material';
 import { useForm } from "react-hook-form"
 import toast from 'react-hot-toast'
 import axios from 'axios'
+import NavBar from '../components/NavBar'
 
 export default function SignIn() {
     useEffect(()=>{
@@ -36,21 +37,11 @@ export default function SignIn() {
       }
     return (
         <>
+        <div>
+            <NavBar/>
+        </div>
             <div className=' text-white h-80 w-full'>
-                <div className='flex items-center justify-between p-4'>
-                    <div>
-                        <h1 className=' w-full text-left font-bold text-5xl p-2'>J E M</h1>
-
-                    </div>
-                    <div className=' bg-slate-200 rounded-xl p-4'>
-                        <NavLink to={'/SignIn/Home'}>
-                            <button className='p-2'>
-                                <img className=' h-5' src="../src/icons/retour.png" alt="MenuIcon" />
-
-                            </button>
-                        </NavLink>
-                    </div>
-                </div>
+                
                 <h1 className='  w-full text-center text-3xl font-bold pl-48 pr-48 pt-20 '>
                     Bienvenue dans <a className=' text-red-500' href="#">Jeune Memoire</a> , renseignez vos informations de connexion
                 </h1>

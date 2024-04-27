@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import Btn_Get from './Btn_Get'
-import Btn_Log from './Btn_Log'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { Button, TextField } from '@mui/material'
 import { useForm } from "react-hook-form"
 import toast from 'react-hot-toast'
 import axios from 'axios'
+import NavBar from '../components/NavBar'
+
 
 export default function LogIn() {
    const navigate = useNavigate();
@@ -57,17 +57,11 @@ export default function LogIn() {
 
     return (
         <>
+        <div>
+            <NavBar/>
+        </div>
             <div className=' text-white h-80 w-full'>
-                <div className='flex items-center justify-between p-4'>
-                    <div className=' bg-slate-200 rounded-xl p-4'>
-                        <NavLink to={'/SignIn/Home'}>
-                            <button className='p-2'>
-                                <img className=' h-5' src="../src/icons/retour.png" alt="MenuIcon" />
-
-                            </button>
-                        </NavLink>
-                    </div>
-                </div>
+               
                 <div className=' flex justify-between'>
                     <h1 className='  w-full text-3xl font-bold pl-48 pr-48 pt-20 '>
                         Inscription
@@ -105,7 +99,7 @@ export default function LogIn() {
                     <Button sx={'background-color: rgb(23, 37, 84)'} type='submit' fullWidth variant="contained">Enregistrer</Button>
 
                     <div>
-                        <NavLink to={'/SignIn/Home'}>
+                        <NavLink to={'/Home'}>
                             <Button sx={'background-color: rgb(23, 37, 84); margin-top:2em'} fullWidth variant="contained">Sortir</Button>
 
                         </NavLink>
