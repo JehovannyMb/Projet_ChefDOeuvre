@@ -7,14 +7,14 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App_lock from './App_lock.jsx';
-import SignIn from './components/SignIn.jsx';
-import Menu from './components/Menu.jsx';
-import LogIn from './components/LogIn.jsx';
-import Home from './components/Home.jsx';
-import List from './components/List.jsx';
-import Course from './components/Course.jsx';
-import InsertCourse from './components/InsertCourses.jsx';
-import InsertCourses from './components/InsertCourses.jsx';
+import SignIn from './pages/SignIn.jsx';
+import Menu from './pages/Menu.jsx';
+import LogIn from './pages/LogIn.jsx';
+import Home from './pages/Home.jsx';
+import List from './pages/List.jsx';
+import Course from './pages/Course.jsx';
+import InsertCourse from './pages/InsertCourses.jsx';
+import InsertCourses from './pages/InsertCourses.jsx';
 import {Toaster} from 'react-hot-toast'
 const router = createBrowserRouter([
   {
@@ -38,26 +38,9 @@ const router = createBrowserRouter([
   element: <LogIn />
 },
 {
-  path:"/SignIn/Home",
+  path:"/Home",
   element: <Home />
-},
-{
-  path:"/SignIn/Menu",
-  element: <Menu />
-},
-{
-  path:"/SignIn/Menu/List",
-  element: <List />
-},
-{
-  path:"/SignIn/Menu/List/Course",
-  element: <Course />
-},
-{
-  path:"/SignIn/Menu/InsertCourses",
-  element: <InsertCourses />
-}
-    ]
+}   ]
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(

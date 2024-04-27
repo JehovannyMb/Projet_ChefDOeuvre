@@ -1,9 +1,20 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { NavLink, useNavigate} from 'react-router-dom'
+import NavBar from '../components/NavBar'
 
 export default function Menu() {
+    useEffect(()=>{
+        if(!localStorage.getItem("Utilisateurs")){
+            navigate("/SignIn")
+        }
+    });
+    const navigate = useNavigate();
+
     return (
         <>
+        <div>
+            <NavBar/>
+        </div>
             <div className=' text-white h-40 w-full'>
                 <div className='flex items-center  p-4 gap-4 justify-center'>
                     <div className=' w-full space-x-4 bg-slate-200 rounded-xl p-4 '>
@@ -44,7 +55,7 @@ export default function Menu() {
                         <NavLink to={'InsertCourses'}>
                             <button className=' flex gap-4'>
                                 <img className=' h-10' src="../src/icons/livre.png" alt="ProfileIcon" />
-                                <h2 className=' font-bold'> Inserrer des cours</h2>
+                                <h2 className=' font-bold'> Insérer des cours</h2>
                             </button>
                         </NavLink>
                     </div>

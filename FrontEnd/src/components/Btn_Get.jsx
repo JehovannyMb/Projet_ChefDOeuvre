@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import SignIn from './SignIn'
+import SignIn from '../pages/SignIn'
 
 export default function Btn_Get(props) {
   return (

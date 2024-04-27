@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import Btn_Get from './Btn_Get'
-import Btn_Log from './Btn_Log'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Button, TextField } from '@mui/material'
 import { useForm } from "react-hook-form"
 import toast from 'react-hot-toast'
 import axios from 'axios'
+import NavBar from '../components/NavBar'
+
 
 export default function LogIn() {
-    const [InputName, setInputName] = useState('')
-    const [InputMail, setInputMail] = useState('')
-    const [InputNum, setInputNum] = useState('')
-    const [InputPassword, setInputPassword] = useState('')
+   const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -20,36 +17,51 @@ export default function LogIn() {
       const onSubmit = (data) => {
         if(data.emailUtilisateur ='' ){
            
-            toast.error("Remplissez le champ mail")
+            toast.error("Veuillez remplir le champ mail")
 
         }else{
             axios
-            .post("http://localhost:3000/Utilisateurs", data)
-            .then((res) =>{
-                console.log(res);
-            toast.success("Inscription réussie");
-            })
-            .catch((err)=> {
-                console.log(err);
-                toast.error("Une erreur est survenue lors de l'inscription")
-            })
-        }
-      };
+            .get(`http://localhost:3000/Utilisateurs?mailUtilisateur=${data.mailUtilisateur}`)
+            .then((res)=>{
+                if(res.data.length > 0){
+                    toast.error("Un compte existe déjà avec cette adresse mail")
+                }else{
+                    axios
+                    .get(`http://localhost:3000/Utilisateurs?tel=${data.tel}`)
+                    .then((res)=>{
+                        if(res.data.length > 0){
+                        toast.error("Un compte existe déjà avec ce numéro de téléphone")
+                    }else{
+                        axios
+                        .get(`http://localhost:3000/Utilisateurs?nomUtilisateur=${data.nomUtilisateur}`)
+                        .then((res)=>{
+                            if(res.data.length>0){
+                                toast.error("Un compte existe déjà avec ce nom d'utilisateur")
+                            }else{
+                                axios
+                                .post("http://localhost:3000/Utilisateurs", data)
+                                .then((res) =>{
+                                    console.log(res);
+                                toast.success("Inscription réussie");
+                                navigate("/SignIn");
+                                })
+                                .catch((err)=> {
+                                    console.log(err);
+                                    toast.error("Une erreur est survenue lors de l'inscription")
+                                })
+                            }
+                        })
+                      
+                    }})}})}};
 
 
     return (
         <>
+        <div>
+            <NavBar/>
+        </div>
             <div className=' text-white h-80 w-full'>
-                <div className='flex items-center justify-between p-4'>
-                    <div className=' bg-slate-200 rounded-xl p-4'>
-                        <NavLink to={'/SignIn/Home'}>
-                            <button className='p-2'>
-                                <img className=' h-5' src="../src/icons/retour.png" alt="MenuIcon" />
-
-                            </button>
-                        </NavLink>
-                    </div>
-                </div>
+               
                 <div className=' flex justify-between'>
                     <h1 className='  w-full text-3xl font-bold pl-48 pr-48 pt-20 '>
                         Inscription
@@ -71,8 +83,7 @@ export default function LogIn() {
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
-
-                        <TextField id="outlined-basic" label="Adresse e-mail" fullWidth type='mail' variant="outlined" {...register("emailUtilisateur", { required : "Veuillez saisir une adresse mail", pattern:"/^[a-zA-Z0-9. _%+-]+@[a-zA-Z0-9. -]+\\. [a-zA-Z]{2,}$/,"})} />
+                        <TextField id="outlined-basic" label="Adresse mail" fullWidth type='email' variant="outlined" {...register("mailUtilisateur", {required: "Veuillez saisir votre adresse mail", pattern:"/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/"})} />
 
                     </div>
                     <div className='  bg-slate-200 rounded-xl p-4'>
@@ -88,7 +99,7 @@ export default function LogIn() {
                     <Button sx={'background-color: rgb(23, 37, 84)'} type='submit' fullWidth variant="contained">Enregistrer</Button>
 
                     <div>
-                        <NavLink to={'/SignIn/Home'}>
+                        <NavLink to={'/Home'}>
                             <Button sx={'background-color: rgb(23, 37, 84); margin-top:2em'} fullWidth variant="contained">Sortir</Button>
 
                         </NavLink>
