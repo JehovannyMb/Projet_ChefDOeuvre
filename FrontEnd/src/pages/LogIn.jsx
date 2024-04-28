@@ -4,7 +4,7 @@ import { Button, TextField } from '@mui/material'
 import { useForm } from "react-hook-form"
 import toast from 'react-hot-toast'
 import axios from 'axios'
-import NavBar from '../components/NavBar'
+import NavBar from '../components/NavBar.jsx'
 
 
 export default function LogIn() {
@@ -12,6 +12,7 @@ export default function LogIn() {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
       } = useForm();
       const onSubmit = (data) => {
@@ -44,6 +45,7 @@ export default function LogIn() {
                                     console.log(res);
                                 toast.success("Inscription réussie");
                                 navigate("/SignIn");
+                                reset();
                                 })
                                 .catch((err)=> {
                                     console.log(err);

@@ -18,7 +18,7 @@ export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleChange = (event) => {
-    setAuth(event.target.checked);
+    setAuth(true);
   };
 
   const handleMenu = (event) => {
@@ -37,7 +37,6 @@ export default function MenuAppBar() {
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
            JEM
           </Typography>
-          {auth && (
             <div>
               <IconButton
                 size="large"
@@ -73,7 +72,6 @@ export default function MenuAppBar() {
                 <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
             </div>
-          )}
         </Toolbar>
       </AppBar>
     </Box>

@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import NavBar from '../components/NavBar'
+import axios from 'axios'
+import { Avatar, Box, Stack, Typography } from '@mui/material'
 
 export default function List() {
+    const [numPages, setNumPages] = useState();
+    const [pageNumber, setPageNumber] = useState(1);
+    const [course, setCourse]= useState([])
+    useEffect(()=>{
+        axios.get("http://localhost:3000/Files")
+        .then((res)=>{
+            setCourse(res.data);
+        })
+    })
     return (
         <>
         <div>
@@ -11,7 +22,7 @@ export default function List() {
             <div className=' text-white h-40 w-full'>
                 <div className='flex items-center  p-4 gap-4 justify-center'>
                     <div className=' w-full space-x-4 bg-slate-200 rounded-xl p-4 '>
-                        <NavLink to={"Menu"}>
+                        <NavLink to={"/Menu"}>
                             <button>
                                 <img className=' h-5' src="/src/icons/1814075_find_magnifier_magnifying glass_search_icon.png" alt="SearchIcon" />
                             </button>
@@ -42,14 +53,26 @@ export default function List() {
 
                     </div>
                     <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white flex gap-4 rounded-t-xl p-4'>
-                        <NavLink to={'Course'}>
+                        <NavLink to={'/Course'}>
                             <button>
                                 <img className=' h-10' src="/src/icons/pile-de-livres.png" alt="course" />
                             </button>
                         </NavLink>
                         <h2 className=' font-bold'> xxxxxxxxxxxxxxxxxx</h2>
                     </div>
-
+                    <div>
+                    {course.map((courses)=> 
+                                <div >
+                                    <div>
+                                        <Avatar></Avatar>
+                                        <Typography>{courses.nomUtilisateur}</Typography>
+                                        <Typography> {courses.description} </Typography>
+                                    </div>
+                                   
+                                </div>
+                                
+                                )}
+                    </div>
                 </div>
 
             </div>
