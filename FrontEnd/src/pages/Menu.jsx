@@ -18,7 +18,7 @@ export default function Menu() {
             <div className=' text-white h-40 w-full'>
                 <div className='flex items-center  p-4 gap-4 justify-center'>
                     <div className=' w-full space-x-4 bg-slate-200 rounded-xl p-4 '>
-                        <NavLink to={"Menu"}>
+                        <NavLink to={"/Menu"}>
                             <button>
                                 <img className=' h-5' src="../src/icons/1814075_find_magnifier_magnifying glass_search_icon.png" alt="SearchIcon" />
                             </button>
@@ -52,7 +52,7 @@ export default function Menu() {
                         </button>
                     </div>
                     <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white rounded-t-xl p-4'>
-                        <NavLink to={'InsertCourses'}>
+                        <NavLink to={'/InsertCourses'}>
                             <button className=' flex gap-4'>
                                 <img className=' h-10' src="../src/icons/livre.png" alt="ProfileIcon" />
                                 <h2 className=' font-bold'> Insérer des cours</h2>
@@ -60,7 +60,7 @@ export default function Menu() {
                         </NavLink>
                     </div>
                     <div className=' border-dashed border-2 border-b-blue-900  border-y-white border-x-white rounded-t-xl p-4'>
-                        <NavLink to={'List'}>
+                        <NavLink to={'/List'}>
 
                             <button className=' flex gap-4'>
                                 <img className=' h-10' src="../src/icons/livre-ouvert.png" alt="ProfileIcon" />

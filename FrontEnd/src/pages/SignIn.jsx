@@ -16,23 +16,26 @@ export default function SignIn() {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
       } = useForm();
-      const onSubmit = (data) => {
+      const onSubmit = (data,props) => {
+
         axios
         .get(`http://localhost:3000/Utilisateurs?mailUtilisateur=${data.mailUtilisateur}&motDePasse=${data.motDePasse}`)
         .then((res)=>{
             if(res.data.length>0){
                 localStorage.setItem("Utilisateurs", JSON.stringify(res.data[0]))
+                toast.success("Connexion réussie");
                 navigate("/Menu")
-                toast.success("Connexion réussie")
+                reset();
 
             }else{
                 toast.error("Les identifiants sont incorrects ou vous ne disposez pas de compte inscrit dans le site")
             }
         }).catch((err)=> {
             console.log(err);
-            toast.error("Une erreur est survenue lors de l'inscription")
+            toast.error("Une erreur est survenue lors de la connexion")
         })
       }
     return (
