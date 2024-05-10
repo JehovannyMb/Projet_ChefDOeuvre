@@ -67,6 +67,7 @@ export default function List() {
                                         <Avatar></Avatar>
                                         <Typography>{courses.nomUtilisateur}</Typography>
                                         <Typography> {courses.description} </Typography>
+                                        <img src={courses.file} alt="" />
                                     </div>
                                    
                                 </div>

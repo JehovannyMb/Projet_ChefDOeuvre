@@ -1,0 +1,28 @@
+{
+  "Utilisateurs": [
+    {
+      "id": "dad9",
+      "nomUtilisateur": "Ruth Musasa",
+      "mailUtilisateur": "ruth@gmail.com",
+      "tel": "0858769648",
+      "motDePasse": "00000",
+      "emailUtilisateur": ""
+    }
+  ],
+  "Files": [
+    {
+      "id": "c327",
+      "description": "uudyy",
+      "idUtilisateur": "dad9",
+      "nomUtilisateur": "Ruth Musasa",
+      "date": "2024-05-01T15:46:03.384Z"
+    },
+    {
+      "id": "f554",
+      "description": "uudyy",
+      "idUtilisateur": "dad9",
+      "nomUtilisateur": "Ruth Musasa",
+      "date": "2024-05-01T15:49:18.718Z"
+    }
+  ]
+}
